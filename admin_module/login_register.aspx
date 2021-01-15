@@ -17,11 +17,15 @@
         }
         function checkName() {
             var tt = $('#<%= txt_user_name.ClientID %>').val();
+            var exp = /^[A-Za-z ]+$/;
             if (tt == "") {
-                return 'Please enter User name!!\n';
+                return 'Please enter your name***\n\n';
+            }
+            else if (exp.test(tt)) {
+                return "";
             }
             else {
-                return "";
+                return 'Only alphabates allowed***\n\n';
             }
         }
 
@@ -37,21 +41,29 @@
 
         function checkemail() {
             var tt = $('#<%= txt_user_email.ClientID %>').val();
+            var exp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
             if (tt == "") {
                 return 'Please enter e mail id!!\n';
             }
-            else {
+            else if (exp.test(tt)) {
                 return "";
+            }
+            else {
+                return 'E-mail not vaild***\n\n';
             }
         }
 
         function checkmobile() {
             var tt = $('#<%= txt_mobile.ClientID %>').val();
+            var exp = /^\d{10}$/;
             if (tt == "") {
                 return 'Please enter Mobile no!!\n';
             }
-            else {
+            else if (exp.test(tt)) {
                 return "";
+            }
+            else {
+                return 'only 10 digtis contact no valid***\n\n';
             }
         }
     </script>
@@ -78,13 +90,13 @@
                                        
                                         <div class="login-register-form">
                                             <asp:TextBox ID="txt_login_mail" runat="server" placeholder="Login E-Mail" ></asp:TextBox>
-                                             <asp:TextBox ID="txt_login_password" runat="server" placeholder="Login Password" ></asp:TextBox>
+                                             <asp:TextBox ID="txt_login_password" runat="server" placeholder="Login Password" TextMode="Password"></asp:TextBox>
                                                 
                                                 <div class="button-box">
                                                     <div class="login-toggle-btn">
                                                        <asp:CheckBox ID="cb_remember" runat="server" />
                                                         <label>Remember me</label>
-                                                        <a href="#">Forgot Password?</a>
+                                                        <a href="forgotpassword.aspx">Forgot Password?</a>
                                                     </div>
                                                     <asp:Button ID="btn_login" runat="server" Text="LogIn" CssClass="btn btn-danger" OnClick="btn_login_Click" />
                                                 </div>
