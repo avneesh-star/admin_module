@@ -1,0 +1,68 @@
+<div class="header-cart">
+                                    
+                                        <a href="#">
+                                        <div class="header-icon-style">
+                                            <i class="icon-handbag icons"></i>
+                                            <span class="count-style">02</span>
+                                        </div>
+                                        <div class="cart-text">
+                                            <span class="digit">My Cart</span>
+                                            <span class="cart-digit-bold">&#x20B9;209.00</span>
+                                        </div>
+                                        </a>
+                                    <div class="shopping-cart-content" id="cart_div">
+                                       <asp:Repeater ID="rp_cart" runat="server">
+                                        <HeaderTemplate>
+                                            
+                                        <ul id="cart_list">
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><asp:Image ID="img1" runat="server" Width="40px" Height="40px" ImageUrl='<%# Eval("dish_image","~/images/{0}") %>' /></a>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#"><%# Eval("dish_name") %></a></h4>
+                                                    <h6>Qty:<%# Eval("quantity") %> </h6>
+                                                    <span>&#x20B9;<%# Eval("total_price") %></span>
+                                                </div>
+                                                <div class="shopping-cart-delete">
+                                                    <a href="#"><i class="ion ion-close"></i></a>
+                                                </div>
+                                            </li>
+                                          
+                                        </ItemTemplate>
+                                        <FooterTemplate>
+                                            </ul>
+                                        </FooterTemplate>
+                                        <div class="shopping-cart-total" id="cartsum" >
+                                            
+                                            <h4>Total : <span class="shop-total">&#x20B9;203</span></h4>
+                                        </div>
+                                        <div class="shopping-cart-btn">
+                                            <a href="#">view cart</a>
+                                            <a href="#">checkout</a>
+                                        </div>
+                                    </div>
+                                         
+                               </asp:Repeater>
+							   </div>
+
+
+
+
+
+
+							   <li class="single-shopping-cart">
+                                                <div class="shopping-cart-img">
+                                                    <a href="#"><asp:Image ID="img1" runat="server" Width="40px" Height="40px" ImageUrl='<%# Eval("dish_image","~/images/{0}") %>' /></a>
+                                                </div>
+                                                <div class="shopping-cart-title">
+                                                    <h4><a href="#"><%# Eval("dish_name") %></a></h4>
+                                                    <h6>Qty:<%# Eval("quantity") %> </h6>
+                                                    <span>&#x20B9;<%# Eval("total_price") %></span>
+                                                </div>
+                                                <div class="shopping-cart-delete">
+                                                    <a href="#"><i class="ion ion-close"></i></a>
+                                                </div>
+                                            </li>

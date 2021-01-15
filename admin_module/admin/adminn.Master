@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminn.Master.cs" Inherits="admin_module.adminn" %>
+<%@ Register Src="~/admin/header.ascx" TagName="myhead" TagPrefix="wuc" %>
+<%@ Register Src="~/admin/footer.ascx" TagName="myfoot" TagPrefix="wuc" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <link href="assets/css/vendor.bundle.base.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet" />
+   <%-- <link href="assets/css/dataTables.bootstrap4.css" rel="stylesheet" />--%>
+    <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link href="assets/css/vendor.bundle.base.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="assets/css/dataTables.bootstrap4.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <script src="assets/js/vendor.bundle.base.js"></script>
+    <script src="assets/js/todolist.js"></script>
+    <script src="assets/js/template.js"></script>
+    <script src="assets/js/settings.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/jquery.dataTables.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.js"></script>
+    <script src="assets/js/data-table.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/Chart.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="sidebar-light">
+    <wuc:myhead id="h1" runat="server"></wuc:myhead>
+    <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas toggled"  id="sidebar" runat="server">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="adminHome.aspx">
+              <i class="mdi mdi-view-dashboard menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categoryManage.aspx">
+              <i class="mdi mdi-format-list-bulleted menu-icon"></i>
+              <span class="menu-title">Category</span>
+            </a>
+          </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="manageDish.aspx">
+              <i class="mdi mdi-cake-layered menu-icon"></i>
+              <span class="menu-title">Dish</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="manage_order.aspx">
+              <i class="mdi mdi-shopping menu-icon"></i>
+              <span class="menu-title">Order</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="users.aspx">
+              <i class="mdi mdi-account-multiple menu-icon"></i>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="deliveryboy.aspx">
+              <i class="mdi mdi-bike menu-icon"></i>
+              <span class="menu-title">Delivery Boy</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-wallet-giftcard menu-icon"></i>
+              <span class="menu-title">Coupon Code</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-file-image menu-icon"></i>
+              <span class="menu-title">Banner</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="manage_contact.aspx">
+              <i class="mdi mdi-contact-mail menu-icon"></i>
+              <span class="menu-title">Contact Us</span>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="mdi mdi-settings menu-icon"></i>
+              <span class="menu-title">Setting</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    <div class="main-panel">
+        <div class="content-wrapper">
+    <form id="form1" class="forms-sample" runat="server">
+    
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+        
+    </form>
+    </div>
+        
+    <wuc:myfoot id="Myfoot" runat="server"></wuc:myfoot>
+</body>
+</html>
