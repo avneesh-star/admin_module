@@ -22,17 +22,26 @@ namespace admin_module.admin
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
         [WebMethod]
-        public string orderStatus()
+        public string orderStatus(int a)
         {
             string data = "";
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_order_status_get", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
+            SqlCommand scmd = new SqlCommand("select order_status from tbl_order_master where order_id='"+a+"'",con);
+            SqlDataAdapter sda = new SqlDataAdapter(scmd);
+            DataTable dtt = new DataTable();
+            sda.Fill(dtt);
             con.Close();
-            data = JsonConvert.SerializeObject(dt);
+            if (dtt.Rows[0]["order_status"].ToString() != "5")
+            { 
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_order_status_get", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                data = JsonConvert.SerializeObject(dt);  
+            }
             return data;
         }
 
@@ -86,13 +95,28 @@ namespace admin_module.admin
         [WebMethod]
         public void updateOrderStatus(int a, int b)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("sp_order_status_update", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@order_in",a);
-            cmd.Parameters.AddWithValue("@order_status",b);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            if (b == 5)
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_order_cancle", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@order_id", a);
+                cmd.Parameters.AddWithValue("@cancle_by", "admin");
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("sp_order_status_update", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@order_in", a);
+                cmd.Parameters.AddWithValue("@order_status", b);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            
+
         }
 
         [WebMethod]

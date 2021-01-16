@@ -78,7 +78,7 @@
                             <li class="top-hover"><a href="#">Welcome <%= Session["userName"]%>  <i class="ion-chevron-down"></i></a>
                                 <ul>
                                     <li><a href="my_account.aspx">Profile  </a></li>
-                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="order_history.aspx">Order History</a></li>
                                     <li> <a href="cart_view.aspx">view cart</a>
                                         </li>
                                     <li><a href="checkout.aspx">checkout</a></li>

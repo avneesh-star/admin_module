@@ -90,7 +90,7 @@
                                        
                                         <div class="login-register-form">
                                             <asp:TextBox ID="txt_login_mail" runat="server" placeholder="Login E-Mail" ></asp:TextBox>
-                                             <asp:TextBox ID="txt_login_password" runat="server" placeholder="Login Password" TextMode="Password"></asp:TextBox>
+                                             <asp:TextBox ID="txt_login_password" runat="server" placeholder="Login Password"  TextMode="Password"></asp:TextBox>
                                                 
                                                 <div class="button-box">
                                                     <div class="login-toggle-btn">

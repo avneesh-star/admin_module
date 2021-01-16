@@ -8,12 +8,13 @@
             assignedBoy();
         });
         function bindOrderStatus() {
+           
             $.ajax({
                 url: 'webadmin.asmx/orderStatus',
                 type: 'post',
                 contentType: 'application/json;charset="utf-8"',
                 dataType: 'json',
-                data: "{}",
+                data: "{a:'" + $("#hdd_order_id").val() + "'}",
                 async: false,
                 success: function (data) {
                     data = JSON.parse(data.d);
@@ -25,6 +26,7 @@
 
                 }
             });
+           
         }
 
         function bindDeliveryBoy() {
@@ -92,6 +94,8 @@
                 success: function (data) {
                     data = JSON.parse(data.d);
                     $("#lbl_od_status").html(data[0].order_status);
+                   
+                    
                 },
                 error: function () {
 
@@ -202,7 +206,7 @@
 					
 					<div>
 						<h4>Order Status:<label id="lbl_od_status" ></label></h4>
-                        
+                       
 						<select class="form-control wSelect200" name="order_status" id="order_status" onchange='<%# String.Format("updateOrderStatus(\"{0}\");", Eval("order_id")) %>' >
 							<option value="">Update Order Status</option>
 						</select>

@@ -29,7 +29,7 @@ namespace admin_module
                 }
                 if (Request.Cookies["password"] != null)
                 {
-                    txt_login_password.Text = Request.Cookies["password"].Value;
+                    txt_login_password.Attributes.Add("value", Request.Cookies["password"].Value);
                 }
                 if (Request.Cookies["userMail"] != null && Request.Cookies["password"] != null)
                 {
