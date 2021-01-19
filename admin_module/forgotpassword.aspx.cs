@@ -65,7 +65,7 @@ namespace admin_module
                         SmtpClient smtp = new SmtpClient();
                         smtp.Host = "smtp.yandex.com.tr";
                         smtp.EnableSsl = true;
-                        NetworkCredential NetworkCred = new NetworkCredential("noreplytes@yandex.com", "london@123");
+                        NetworkCredential NetworkCred = new NetworkCredential("noreplytes@yandex.com", "password");
                         smtp.UseDefaultCredentials = true;
                         smtp.Credentials = NetworkCred;
                         smtp.Port = 587;
