@@ -84,6 +84,10 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Razorpay, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Razorpay.3.0.0\lib\net45\Razorpay.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\netstandard1.1\System.Buffers.dll</HintPath>
       <Private>True</Private>
@@ -329,6 +333,8 @@
     <Content Include="assets\fonts\Simple-Line-Iconsb26c.woff" />
     <Content Include="assets\fonts\Simple-Line-Iconsb26c.woff2" />
     <Content Include="profile.aspx" />
+    <Content Include="RazorpayCallBack.aspx" />
+    <Content Include="Razorpaycheckout.aspx" />
     <Content Include="resetPassword.aspx" />
     <Content Include="shop.aspx" />
     <Content Include="shopBak.aspx" />
@@ -607,6 +613,20 @@
     </Compile>
     <Compile Include="admin\users.aspx.designer.cs">
       <DependentUpon>users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RazorpayCallBack.aspx.cs">
+      <DependentUpon>RazorpayCallBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RazorpayCallBack.aspx.designer.cs">
+      <DependentUpon>RazorpayCallBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Razorpaycheckout.aspx.cs">
+      <DependentUpon>Razorpaycheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Razorpaycheckout.aspx.designer.cs">
+      <DependentUpon>Razorpaycheckout.aspx</DependentUpon>
     </Compile>
     <Compile Include="resetPassword.aspx.cs">
       <DependentUpon>resetPassword.aspx</DependentUpon>

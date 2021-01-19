@@ -64,6 +64,7 @@
                                                     <div class="single-ship">
                                                         <asp:RadioButtonList ID="rbl_payment_mode" runat="server" CssClass="dish_radio">
                                                             <asp:ListItem Text="Cash On Delivery(COD)" Value="1" ></asp:ListItem>
+                                                            <asp:ListItem Text="Razorpay" Value="2" ></asp:ListItem>
                                                             <%--<asp:ListItem Text="wallet" Value="2"></asp:ListItem>--%>
                                                         </asp:RadioButtonList>
                                                     </div>
