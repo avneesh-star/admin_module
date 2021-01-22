@@ -7,13 +7,19 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+using System.IO;
+using System.Text;
 
 namespace admin_module.admin
 {
     public partial class view_order : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
+        public DataTable udt = new DataTable();
+        public DataTable ddt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["idd"] != null && Session["idd"].ToString() != "")
@@ -47,6 +53,7 @@ namespace admin_module.admin
             con.Close();
             rp_order_master.DataSource = dt;
             rp_order_master.DataBind();
+            udt = dt;
         }
 
         protected void rp_order_master_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -54,7 +61,6 @@ namespace admin_module.admin
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 Repeater detailrp = (Repeater)e.Item.FindControl("rp_order_detail");
-                
                 con.Open();
                 SqlCommand cmd = new SqlCommand("sp_order_detail_by_orderID_get", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -65,6 +71,7 @@ namespace admin_module.admin
                 con.Close();
                 detailrp.DataSource = dt;
                 detailrp.DataBind();
+                ddt = dt;
             }
         }
 
@@ -96,6 +103,10 @@ namespace admin_module.admin
             con.Close();
             
         }
-       
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+
+        }
+        
     }
 }

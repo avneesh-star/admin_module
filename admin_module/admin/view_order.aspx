@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminn.Master" AutoEventWireup="true" CodeBehind="view_order.aspx.cs" Inherits="admin_module.admin.view_order" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminn.Master" AutoEventWireup="true" CodeBehind="view_order.aspx.cs" EnableEventValidation="false" Inherits="admin_module.admin.view_order" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -120,11 +120,24 @@
                 }
             });
         }
+
+        function print_in(pint_page) {
+            var printContent = document.getElementById(pint_page);
+            var windowUrl = 'about:blank';
+            var windowName = 'PrintWindow';
+            var printWindow = window.open(windowUrl, windowName,
+                  'left=50000,top=50000,width=0,height=0');
+            printWindow.document.write(printContent.innerHTML);
+            printWindow.document.close();
+            printWindow.focus();
+            printWindow.print();
+            printWindow.close();
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="page-header">
+    <div id="print_page" class="page-header">
               <h3 class="page-title"> Order Detail </h3>
               
             </div>
@@ -201,7 +214,7 @@
 					
 					
                     <div class="container-fluid w-100">
-                      <a href='download_invoice.aspx?id=<%# Eval("order_id") %>' class="btn btn-primary float-right mt-4 ml-2"><i class="mdi mdi-printer mr-1"></i>PDF</a>
+                      <a href='../download_invoice.aspx?order_id=<%# Eval("order_id") %>' class="btn btn-primary float-right mt-4 ml-2"><i class="mdi mdi-printer mr-1"></i>PDF</a>
                     </div>
 					
 					<div>

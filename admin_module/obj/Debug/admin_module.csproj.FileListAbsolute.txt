@@ -128,3 +128,6 @@ E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\
 E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\obj\Debug\admin_module.dll
 E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\obj\Debug\admin_module.pdb
 E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\bin\Razorpay.dll
+E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\bin\BouncyCastle.Crypto.dll
+E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\bin\itextsharp.dll
+E:\alok sir\Alok Sir codes\food_ordering\admin_module\admin_module\admin_module\bin\itextsharp.xml

@@ -47,6 +47,14 @@
       <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net452\BCrypt.Net-Next.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -122,6 +130,7 @@
     <Content Include="admin\addCategory.aspx" />
     <Content Include="admin\AddDeliveryBoy.aspx" />
     <Content Include="admin\addDish.aspx" />
+    <Content Include="admin\assets\logo1.png" />
     <Content Include="admin\categoryManage.aspx" />
     <Content Include="admin\deliveryboy.aspx" />
     <Content Include="admin\dishPrice.aspx" />
@@ -178,6 +187,7 @@
     <Content Include="deliveryBoy\rorders.aspx" />
     <Content Include="deliveryBoy\Style.css" />
     <Content Include="deliveryBoy\view_detail.aspx" />
+    <Content Include="download_invoice.aspx" />
     <Content Include="forcart.asmx" />
     <Content Include="forgotpassword.aspx" />
     <Content Include="frontscript.js" />
@@ -552,6 +562,13 @@
     </Compile>
     <Compile Include="deliveryBoy\view_detail.aspx.designer.cs">
       <DependentUpon>view_detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="download_invoice.aspx.cs">
+      <DependentUpon>download_invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="download_invoice.aspx.designer.cs">
+      <DependentUpon>download_invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="forcart.asmx.cs">
       <DependentUpon>forcart.asmx</DependentUpon>

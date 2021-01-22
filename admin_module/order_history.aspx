@@ -30,7 +30,7 @@
                                             <td>
 												<div class="div_order_id"><a href="#"><%# Eval("order_id") %></a></div>
 											<br/>
-											<a href="#"><img src='assets/img/icon-img/pdf.png' width="20" title="Download Invoice"/></a>
+											<a href='download_invoice.aspx?order_id=<%# Eval("order_id") %>'><img src='assets/img/icon-img/pdf.png' width="20" title="Download Invoice"/></a>
 											</td>
                                             <td style="font-size:14px;">
                                                 &#x20b9;<%# Eval("total_price") %>
